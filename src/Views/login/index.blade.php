@@ -100,7 +100,7 @@
                                 @endif
                                 {{\WebConf::get('site_name')}}</h1>
                             <p> {{\WebConf::get('copy_right')}} <br/> Powered by <b><a
-                                            href="http://laflux.com">Laflux</a></b></p>
+                                            href="http://laflux.com">LaFlux</a></b></p>
                         </div>
                     </div>
                 </form>

@@ -53,8 +53,7 @@
                     </ul>
                 </li>
                 @include('Dashboard::dashboard.partials.topnavbuilder')
-                <li><a href="{{url('/')}}" target="_blank" class="material-ripple" data-ripple-color="#CB8962"><b>Visit
-                            Front Page</b></a>
+                <li><a href="{{url('/')}}" target="_blank" class="material-ripple" data-ripple-color="#CB8962"><b>Goto Website</b></a>
                 </li>
             </ul>
         </nav>

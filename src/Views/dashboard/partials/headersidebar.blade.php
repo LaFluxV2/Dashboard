@@ -7,7 +7,7 @@
                     <i class="fa fa-home"></i>
                     <span>{{\WebConf::get('site_name')}}</span>
                 @else
-                    <i class="fa fa-home"></i> <span>Laflux Dashboard</span>
+                    <i class="fa fa-home"></i> <span>LaFlux</span>
                 @endif
             </a>
         </div>
