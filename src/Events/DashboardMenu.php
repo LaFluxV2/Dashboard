@@ -11,7 +11,6 @@ namespace ExtensionsValley\Dashboard\Events;
         , 'main_menu_key' => 'control.panel'
         , 'level' => '0'
         , 'sub_menu' => [
-
             '0' => [
                 'link' => '#'
                 , 'menu_text' => 'User Management'
@@ -55,33 +54,6 @@ namespace ExtensionsValley\Dashboard\Events;
                     ],
                 ],
             ],
-
-
-
-//            '1' => [
-//                'link' => '#'
-//                , 'menu_text' => 'Dummy'
-//                , 'menu_icon' => '<i class="fa fa-tasks"></i>'
-//                , 'acl_key' => 'extensionsvalley.dashboard.dummymanagement'
-//                , 'sub_menu_key' => 'control.panel'
-//                , 'level' => '1'
-//                , 'sub_sub_menu' => [
-//                    '0' => [
-//                        'link' => '/admin/list/users'
-//                        , 'menu_text' => 'Dummy'
-//                        , 'menu_icon' => '<i class="fa fa-tasks"></i>'
-//                        , 'acl_key' => 'extensionsvalley.dashboard.users'
-//                        , 'sub_sub_menu_key' => 'control.panel'
-//                        , 'level' => '2'
-//                        , 'vendor' => 'ExtensionsValley'
-//                        , 'namespace' => 'ExtensionsValley\Dashboard'
-//                        , 'model' => 'Users'
-//                    ],
-//                ],
-//            ],
-
-
-
         ],
     ]);
 });

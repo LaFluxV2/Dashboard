@@ -20,16 +20,16 @@
             {!!Form::open(array('route' => $action, 'method' => 'post','onsubmit' => 'return ConfirmCheck()'))!!}
             <div class="row">
 
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="form-group {{ $errors->has('group') ? 'has-error' : '' }} control-required">
-                            {!! Form::label('role_id', 'User Role') !!}
-                            {!! Form::select('role_id', array("0"=> " Choose Group")+ExtensionsValley\Dashboard\Models\Roles::getRoles()->toArray(), (\Input::has('id')) ? Input::get('id') : null, [
-                                'class'       => 'form-control js-permission-role select2',
-                                'required'    => 'required'
-                            ]) !!}
-                        </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group {{ $errors->has('group') ? 'has-error' : '' }} control-required">
+                        {!! Form::label('role_id', 'User Role') !!}
+                        {!! Form::select('role_id', array("0"=> " Choose Group")+ExtensionsValley\Dashboard\Models\Roles::getRoles()->toArray(), (\Input::has('id')) ? Input::get('id') : null, [
+                            'class'       => 'form-control js-permission-role select2',
+                            'required'    => 'required'
+                        ]) !!}
                     </div>
-                    <input type="hidden" name="current_user_group" id="current_user_group" value="1">
+                </div>
+                <input type="hidden" name="current_user_group" id="current_user_group" value="1">
 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group control-required" style="margin-top: 25px;">
@@ -38,7 +38,6 @@
                 </div>
             </div>
             {{--Selecting Firm and Department--}}
-
             <br>
             <br>
             <?php
@@ -81,7 +80,6 @@
                     </div>
                 </div>
 
-
                 @if(sizeof($menugroups->all()))
                     <?php
                     $count = 1;
@@ -105,15 +103,8 @@
                             $main_menu_key = "No key set";
                         }
                         ?>
-
-
                         @if(!empty($key))
-
-
-
-
                             @foreach($key['sub_menu'] as $sub_key)
-
                                 <?php
                                 if (sizeof($result)) {
                                     $sub_menu_data = \DB::table('acl_permission')->Where('acl_key', $sub_key['acl_key'])
@@ -123,7 +114,6 @@
                                 } else {
                                     $sub_menu_data = [];
                                 }
-
                                 if (isset($sub_key['sub_menu_key'])) {
                                     $sub_menu_key = $sub_key['sub_menu_key'];
                                 } else {
@@ -132,8 +122,6 @@
                                 ?>
                                 @if(isset($sub_key['sub_menu_key']))
                                     @if( $main_menu_key == $sub_key['sub_menu_key'])
-
-
                                         @if(!empty($sub_key))
                                             @foreach($sub_key['sub_sub_menu'] as $sub_sub_key)
                                                 @if(isset($sub_sub_key['sub_sub_menu_key']))
@@ -148,10 +136,8 @@
                                                             $sub_sub_menu_data = [];
                                                         }
                                                         ?>
-
                                                         <div class="row">
                                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
                                                                 <?php
                                                                 $skip_main_menu = 0;
                                                                 if (isset($temp_key_acl)) {
@@ -166,8 +152,6 @@
                                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
                                                                         <table class="table table-responsive">
                                                                             <tr class="pull-right">
-
-
                                                                                 <td>{!! $key['menu_icon'] !!}
                                                                                     {{$key['menu_text']}}
                                                                                     <input type="hidden"
@@ -185,7 +169,7 @@
                                                                                            style="width: 50px;"
                                                                                            @if(!empty($main_menu_data->ordering))
                                                                                            value="{{$main_menu_data->ordering}}"
-                                                                                            @endif
+                                                                                        @endif
                                                                                     /></td>
                                                                                 <td><input type="checkbox"
                                                                                            @if(!empty($main_menu_data->view)) checked="checked"
@@ -201,7 +185,6 @@
                                                                     </div>
                                                                 @endif
                                                                 <?php $temp_key_acl = $key['acl_key']; ?>
-
                                                                 <?php
                                                                 $skip_sub_menu = 0;
                                                                 if (isset($temp_sub_key_acl)) {
@@ -230,16 +213,13 @@
                                                                                     <input type="hidden"
                                                                                            name="sub_menu_parent_acl_key[]"
                                                                                            value="{{$key['acl_key']}}"/>
-
-
-
                                                                                 </td>
                                                                                 <td><input type="number"
                                                                                            name="sub_menu_order[]"
                                                                                            style="width: 50px;"
                                                                                            @if(!empty($sub_menu_data->ordering))
                                                                                            value="{{$sub_menu_data->ordering}}"
-                                                                                            @endif
+                                                                                        @endif
                                                                                     /></td>
                                                                                 <td><input type="checkbox"
                                                                                            @if(!empty($sub_menu_data->view)) checked="checked"
@@ -255,8 +235,6 @@
                                                                     </div>
                                                                 @endif
                                                                 <?php $temp_sub_key_acl = $sub_key['acl_key']; ?>
-
-
                                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                                                                     <table class="table table-responsive">
                                                                         <tr class="pull-right">
@@ -283,14 +261,13 @@
                                                                                 <input type="hidden"
                                                                                        name="sub_sub_menu_model[]"
                                                                                        value="{{$sub_sub_key['model'] ?? 0}}"/>
-
                                                                             </td>
                                                                             <td>
                                                                                 <input type="number"
                                                                                        name="sub_sub_menu_order[]"
                                                                                        @if(!empty($sub_sub_menu_data->ordering))
                                                                                        value="{{$sub_sub_menu_data->ordering}}"
-                                                                                        @endif
+                                                                                    @endif
                                                                                 />
                                                                             </td>
                                                                             <td>
@@ -331,12 +308,10 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     @endif
                                                 @endif
                                             @endforeach
                                         @endif
-
                                         <?php $subcounter++; ?>
                                     @endif
                                 @endif
@@ -345,16 +320,14 @@
                         <?php $maincounter++; ?>
                     @endforeach
                 @endif
-
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                         {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
                     </div>
                 </div>
-
                 <script>
                     function ConfirmCheck() {
-                            return true;
+                        return true;
                     }
                 </script>
                 {!! Form::token() !!}

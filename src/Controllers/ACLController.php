@@ -153,7 +153,7 @@ class ACLController extends Controller
     {
         $role_id = \Input::get('role_id');
 
-//        echo \Input::has('main_menu_view_1'); exit;
+//        echo \Input::get('main_menu_view_1'); exit;
 
 
         if ((int)$role_id == 0) {
@@ -173,9 +173,11 @@ class ACLController extends Controller
         $main_menu_acl_key = \Input::get('main_menu_acl_key');
         $data = [];
         for ($i = 0; $i < sizeof($main_menu_text); $i++) {
-            $main_menu_item = !empty(\Input::has('main_menu_view_' . $i)) ?
-                ((\Input::get('main_menu_view_' . $i) == 'on') ? 1 : 0)
-                : 0;
+            $main_menu_item = !empty(\Input::has('main_menu_view_' . $i)) ?  ((\Input::get('main_menu_view_' . $i) == 'on') ? 1 : 0) : 0;
+
+//            echo $i;
+//            echo $main_menu_item;
+//            exit;
 
             $data[] = [
                 'role_id' => $role_id,
@@ -189,11 +191,18 @@ class ACLController extends Controller
                 'view' => $main_menu_item,
                 'created_at' => date("Y-m-d h:i:s"),
             ];
+
+
+            print_r($data);
+
         }
+
+//        print_r($data);
+//        exit;
 
         \DB::table('acl_permission')->insert($data);
 
-        ## ++++++++++++++++++++++++++++++++++ Main Menu Privilages ++++++++++++++++++++++++++++++++++
+        ## ++++++++++++++++++++++++++++++++++ Sub Menu Privilages ++++++++++++++++++++++++++++++++++
         $sub_menu_text = \Input::get('sub_menu_text');
         $sub_menu_icon = \Input::get('sub_menu_icon');
         $sub_menu_order = \Input::get('sub_menu_order');

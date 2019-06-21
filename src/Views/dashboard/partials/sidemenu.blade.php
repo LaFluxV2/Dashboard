@@ -27,8 +27,6 @@
                 ->Where('level', 0)
                 ->orderBy('ordering', 'ASC')
                 ->get();
-
-            //            print_r($main_menu);
             ?>
             {{-- 1st Level Menu--}}
             <ul class="nav side-menu">
@@ -68,7 +66,6 @@
                                             ->Where('parent_menu', $subkey->id)
                                             ->orderBy('ordering', 'ASC')
                                             ->get();
-                                        // print_r($sub_menu);
                                         ?>
                                         {{--3rd Level Menu--}}
                                         <ul class="nav child_menu">
