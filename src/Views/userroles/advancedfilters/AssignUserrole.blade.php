@@ -22,7 +22,7 @@
             <div class="col-md-4 col-sm-4 col-xs-12 form-group">
                 {!! Form::label('filter_user', 'Users') !!}
                 {!! Form::select('filter_user', array('0'=>'--Select--') + ExtensionsValley\Dashboard\Models\User::getUsers()->toArray(),\Input::has('filter_user') ? \Input::get('filter_user') : '' , [
-                    'class'       => 'form-control select2',
+                    'class'       => 'form-control input-sm select2',
               ]) !!}
                 <span class="error_red">{{ $errors->first('filter_user') }}</span>
 
@@ -31,7 +31,7 @@
             <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 form-group">
                 {!! Form::label('filter_role', 'Roles') !!}
                 {!! Form::select('filter_role',array('0'=>'--Select--') + ExtensionsValley\Dashboard\Models\Roles::getRoles()->toArray(),\Input::has('filter_role') ? \Input::get('filter_role') : '' , [
-                    'class'       => 'form-control js-example-responsive filter_role select2',
+                    'class'       => 'form-control input-sm  js-example-responsive filter_role select2',
                 ]) !!}
                 <span class="error_red">{{ $errors->first('filter_role') }}</span>
 
@@ -42,8 +42,8 @@
                     <br>
                     <a href="#" onclick="assigncourseAction(this);" data-action="/admin/assignusers"
                        class="btn btn-primary">Assign</a>
-                    <a href="{{Request::url()}}" class="btn btn-dark">Clear</a>
-                    <button type="submit" class="btn btn-success">Filter</button>
+                    <a href="{{Request::url()}}" class="btn btn-sm btn-dark">Clear</a>
+                    <button type="submit" class="btn btn-sm btn-success">Filter</button>
                 </div>
             </div>
 

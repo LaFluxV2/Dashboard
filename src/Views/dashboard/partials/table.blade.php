@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-6 col-xs-12">
                 <div class="x_panel">
-                    <h5>{{$title}}</h5>
+                    <h5><i class="fa fa-th-list"></i> {{$title}}</h5>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">

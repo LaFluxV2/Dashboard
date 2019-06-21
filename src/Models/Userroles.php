@@ -208,8 +208,8 @@ class Userroles extends Model
             ->editColumn('remove', '
                                     {!!Form::open(array("route" => "extensionsvalley.admin.removeuser", "method" => "get")) !!}
                                     <input type="hidden" id="user_id" name="user_id" value="{{$user_id}}" />
-                                    <input type="hidden" id="role_id" name="role_id" value="{{$role_id}}" />
-                                    {!! Form::submit("Remove", ["class" => "btn btn-danger"]) !!}
+                                    <input type="hidden" id="role_id" name="role_id" value="{{$role_id}}" />                
+                                    <input type="submit" class="btn btn-sm btn-danger" value="Remove" />
                                     {!! Form::close() !!}
                                      ')
             ->editColumn('status', '@if($status==1) <span class="glyphicon glyphicon-ok"></span> 

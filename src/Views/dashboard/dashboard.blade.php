@@ -12,11 +12,11 @@
 @endif
 
 <!-- Bootstrap -->
-    <link href="{{asset("packages/extensionsvalley/dashboard/css/bootstrap.min.css")}}" rel="stylesheet">
+    <link href="{{asset("packages/extensionsvalley/dashboard/css/bootstrap/bootstrap.min.css")}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="{{asset("packages/extensionsvalley/dashboard/css/font-awesome.min.css")}}" rel="stylesheet">
+    <link href="{{asset("packages/extensionsvalley/dashboard/css/font-awesome/font-awesome.min.css")}}" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="{{asset("packages/extensionsvalley/dashboard/css/custom.min.css")}}" rel="stylesheet">
+    <link href="{{asset("packages/extensionsvalley/dashboard/css/build_production/custom.min.css")}}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{asset("packages/extensionsvalley/dashboard/css/core-admin.css")}}" rel="stylesheet">
     <!-- iCheck -->
@@ -27,7 +27,7 @@
     <link href="{{asset("packages/extensionsvalley/dashboard/css/datatables/buttons.bootstrap.min.css")}}"
           rel="stylesheet">
     <!-- Select2 -->
-    <link href="{{asset("packages/extensionsvalley/dashboard/css/select2.min.css")}}" rel="stylesheet">
+    <link href="{{asset("packages/extensionsvalley/dashboard/css/select2/select2.min.css")}}" rel="stylesheet">
     <!-- bootstrap-progressbar -->
     <link href="{{asset("packages/extensionsvalley/dashboard/css/bootstrap-progressbar-3.3.4.min.css")}}"
           rel="stylesheet">

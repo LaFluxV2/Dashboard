@@ -17,51 +17,51 @@
         @if(!empty($table->show_toolbar['view']) && $acl_permission->view == 1)
             <button onclick="findRoute('view');" class="btn btn-sm btn-dark material-ripple" type="button"
                     data-ripple-color="#CB8962">
-                {{$table->show_toolbar['view']}}
+                <i class="fa fa-eye"></i> {{$table->show_toolbar['view']}}
             </button>
         @endif
         @if(!empty($table->show_toolbar['add']) && $acl_permission->adding == 1 )
             <button onclick="findRoute('add');" class="btn btn-sm btn-success material-ripple" type="button"
                     data-ripple-color="#CB8962">
-                {{$table->show_toolbar['add']}}
+                <i class="fa fa-plus"></i> {{$table->show_toolbar['add']}}
             </button>
         @endif
         @if(\Input::has('filter_trashed'))
             @if(!empty($table->show_toolbar['restore']) && $acl_permission->trash == 1)
                 <button onclick="findAction('restore');" class="btn btn-sm btn-warning material-ripple" type="button"
                         data-ripple-color="#CB8962">
-                    {{$table->show_toolbar['restore']}}
+                    <i class="fa fa-backward"></i> {{$table->show_toolbar['restore']}}
                 </button>
             @endif
             @if(!empty($table->show_toolbar['forcedelete']) && $acl_permission->trash == 1)
                 <button onclick="findAction('forcedelete');" class="btn btn-sm btn-danger material-ripple" type="button"
                         data-ripple-color="#CB8962">
-                    {{$table->show_toolbar['forcedelete']}}
+                    <i class="fa fa-trash"></i> {{$table->show_toolbar['forcedelete']}}
                 </button>
             @endif
         @else
             @if(!empty($table->show_toolbar['edit']) && $acl_permission->edit == 1)
                 <button onclick="findRoute('edit');" class="btn btn-sm btn-primary material-ripple" type="button"
                         data-ripple-color="#CB8962">
-                    {{$table->show_toolbar['edit']}}
+                    <i class="fa fa-edit"></i> {{$table->show_toolbar['edit']}}
                 </button>
             @endif
             @if(!empty($table->show_toolbar['publish']) && $acl_permission->edit == 1)
                 <button onclick="findAction('enable');" class="btn btn-sm btn-info material-ripple" type="button"
                         data-ripple-color="#CB8962">
-                    {{$table->show_toolbar['publish']}}
+                    <i class="fa fa-check"></i> {{$table->show_toolbar['publish']}}
                 </button>
             @endif
             @if(!empty($table->show_toolbar['unpublish']) && $acl_permission->edit == 1)
                 <button onclick="findAction('disable');" class="btn btn-sm btn-warning material-ripple" type="button"
                         data-ripple-color="#CB8962">
-                    {{$table->show_toolbar['unpublish']}}
+                    <i class="fa fa-times"></i> {{$table->show_toolbar['unpublish']}}
                 </button>
             @endif
             @if(!empty($table->show_toolbar['trash']) && $acl_permission->trash == 1)
                 <button onclick="findAction('remove');" class="btn btn-sm btn-danger material-ripple" type="button"
                         data-ripple-color="#CB8962">
-                    {{$table->show_toolbar['trash']}}
+                    <i class="fa fa-trash"></i> {{$table->show_toolbar['trash']}}
                 </button>
             @endif
         @endif
