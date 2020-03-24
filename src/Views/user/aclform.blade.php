@@ -42,7 +42,7 @@
             <br>
             <?php
             $menugroups = new Illuminate\Support\Collection;
-            \Event::fire('admin.menu.groups', [$menugroups]);
+            \Event::dispatch('admin.menu.groups', [$menugroups]);
             ?>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

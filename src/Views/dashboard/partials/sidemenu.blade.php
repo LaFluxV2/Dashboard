@@ -6,7 +6,7 @@
         @if(!\Schema::hasTable('acl_permission'))
             <?php
             $menugroups = new Illuminate\Support\Collection;
-            \Event::fire('admin.menu.groups', [$menugroups]);
+            \Event::dispatch('admin.menu.groups', [$menugroups]);
             ?>
             <ul class="nav side-menu">
                 @foreach($menugroups as $key)

@@ -10,7 +10,7 @@
         <div class="row">
             <?php
             $widgets = new Illuminate\Support\Collection;
-            \Event::fire('admin.widgets.groups', [$widgets]);
+            \Event::dispatch('admin.widgets.groups', [$widgets]);
             $widget_items = [];
             foreach ($widgets as $items) {
                 $widget_items = array_merge($widget_items, $items['items']);

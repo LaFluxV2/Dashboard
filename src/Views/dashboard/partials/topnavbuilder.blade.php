@@ -1,6 +1,6 @@
 <?php
 $topnavigation = new Illuminate\Support\Collection;
-\Event::fire('admin.topnavigation.groups', [$topnavigation]);
+\Event::dispatch('admin.topnavigation.groups', [$topnavigation]);
 $topnavigation_items = [];
 foreach ($topnavigation as $items) {
     $topnavigation_items = array_merge($topnavigation_items, $items['items']);

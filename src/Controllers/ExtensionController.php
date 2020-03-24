@@ -512,7 +512,7 @@ class ExtensionController extends Controller
 
         $module_key = $data['vendor'] . "." . $data['name'];
         $menugroups = new \Illuminate\Support\Collection;
-        \Event::fire('admin.menu.groups', [$menugroups]);
+        \Event::dispatch('admin.menu.groups', [$menugroups]);
         $acl_keys = [];
 
         if (isset($menugroups[$module_key])) {
